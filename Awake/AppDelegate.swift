@@ -31,16 +31,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
         
-        // Use text title initially to ensure visibility
-        button.title = "☕"
-        
         updateMenuBarIcon()
         setupMenu()
     }
     
     private func updateMenuBarIcon() {
         guard let button = statusItem.button else { return }
-        button.title = awakeManager.isActive ? "☕" : "😴"
+        
+        let symbolName = awakeManager.isActive ? "cup.and.saucer.fill" : "cup.and.saucer"
+        let description = awakeManager.isActive ? "Awake is active" : "Awake is inactive"
+        
+        if let image = NSImage(systemSymbolName: symbolName, accessibilityDescription: description) {
+            image.isTemplate = true
+            button.image = image
+            button.title = ""
+        }
     }
     
     private func setupMenu() {
