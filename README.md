@@ -1,5 +1,9 @@
 # Awake
 
+<p align="center">
+  <img src="Awake/Assets.xcassets/AppIcon.appiconset/icon_256x256.png" alt="Awake Icon" width="128" height="128">
+</p>
+
 A lightweight macOS menu bar app that keeps your Mac awake. Similar to Amphetamine, but simpler.
 
 ## Features
